@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: SimpleTest
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: SND14190
+Implementation-Vendor-Id: br.com.infracommerce
+Build-Jdk: 1.8.0_121
+Implementation-URL: http://projects.spring.io/spring-boot/SimpleTest/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

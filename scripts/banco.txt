@@ -1,0 +1,8 @@
+create table infra_user (
+   id BIGINT NOT NULL AUTO_INCREMENT,
+   Name VARCHAR(30) NOT NULL,
+   Login  VARCHAR(30) NOT NULL,
+   Password VARCHAR(30) NOT NULL,
+   Email VARCHAR(30) NOT NULL,
+   PRIMARY KEY (id)
+);
