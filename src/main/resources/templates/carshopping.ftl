@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" ng-app="crudApp">
+<html lang="en" ng-app="carShoppingApp">
     <head>
         <title>${title}</title>
         <link href="css/bootstrap.css" rel="stylesheet"/>
@@ -8,7 +8,7 @@
     </head>
     <body>
     	<div class="custom-width-logo">
-    		<img src="images/logo_infracommerce.png" />
+  			<img src="images/logo_infracommerce.png" />  		
     	</div>
     	<div style="padding-left: 24px;">
     		<span class="lead"><a href="http://localhost:8080/infracommerce">Usuários</a></span>
@@ -20,8 +20,12 @@
         <script src="js/lib/angular-ui-router.min.js" ></script>
         <script src="js/lib/localforage.min.js" ></script>
         <script src="js/lib/ngStorage.min.js"></script>
-        <script src="js/app/user/app.js"></script>
-        <script src="js/app/user/UserService.js"></script>
-        <script src="js/app/user/UserController.js"></script>
+        <script src="js/app/carshopping/app.js"></script>
+        <script src="js/app/carshopping/CarShoppingService.js"></script>
+        <script src="js/app/carshopping/CarShoppingController.js"></script>
+        
+         <script src="js/app/products/app.js"></script>
+        <script src="js/app/products/ProductService.js"></script>
+        <script src="js/app/products/ProductController.js"></script>
     </body>
 </html>

@@ -26,22 +26,16 @@ public class ProductRestController {
 	public static final Logger logger = LoggerFactory.getLogger(ProductRestController.class);
 
 	@Autowired
-	ProductService productService; // Service which will do all data
-								// retrieval/manipulation work
-
-	// -------------------Retrieve All Products---------------------------------------------
+	ProductService productService; 
 
 	@RequestMapping(value = "/product/", method = RequestMethod.GET)
 	public ResponseEntity<List<Product>> listAllProducts() {
 		List<Product> products = productService.findAllProducts();
 		if (products.isEmpty()) {
 			return new ResponseEntity(HttpStatus.NO_CONTENT);
-			// You many decide to return HttpStatus.NOT_FOUND
 		}
 		return new ResponseEntity<List<Product>>(products, HttpStatus.OK);
 	}
-
-	// -------------------Retrieve Single Product------------------------------------------
 
 	@RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> getProduct(@PathVariable("id") long id) {
@@ -53,9 +47,6 @@ public class ProductRestController {
 		}
 		return new ResponseEntity<Product>(product, HttpStatus.OK);
 	}
-
-	// -------------------Create a
-	// Product-------------------------------------------
 
 	@RequestMapping(value = "/product/", method = RequestMethod.POST)
 	public ResponseEntity<?> createProduct(@RequestBody Product product, UriComponentsBuilder ucBuilder) {
@@ -73,9 +64,6 @@ public class ProductRestController {
 		headers.setLocation(ucBuilder.path("/api/product/{id}").buildAndExpand(product.getId()).toUri());
 		return new ResponseEntity<String>(headers, HttpStatus.CREATED);
 	}
-
-	// ------------------- Update a Product
-	// ------------------------------------------------
 
 	@RequestMapping(value = "/product/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<?> updateProduct(@PathVariable("id") long id, @RequestBody Product product) {
@@ -95,9 +83,6 @@ public class ProductRestController {
 		return new ResponseEntity<Product>(product, HttpStatus.OK);
 	}
 
-	// ------------------- Delete a
-	// Product-----------------------------------------
-
 	@RequestMapping(value = "/product/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<?> deleteProduct(@PathVariable("id") long id) {
 		logger.info("Obtendo e excluindo o produto com o id {}", id);
@@ -111,8 +96,6 @@ public class ProductRestController {
 		productService.deleteProductById(id);
 		return new ResponseEntity<Product>(HttpStatus.NO_CONTENT);
 	}
-
-	// ------------------- Delete All Products-----------------------------
 
 	@RequestMapping(value = "/product/", method = RequestMethod.DELETE)
 	public ResponseEntity<Product> deleteAllProduct() {

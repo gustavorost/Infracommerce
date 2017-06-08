@@ -16,6 +16,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Table(name="infra_product")
 public class Product implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
@@ -30,6 +32,10 @@ public class Product implements Serializable {
 	@NotNull
 	@Column(name="VALUE", nullable=false)
 	private double value;
+	
+	@NotNull
+	@Column(name="QUANTIDADE", nullable=false)
+	private int quantidade;
 
 	public Long getId() {
 		return id;
@@ -63,7 +69,14 @@ public class Product implements Serializable {
 		this.value = value;
 	}
 
-	
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

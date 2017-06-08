@@ -6,3 +6,8 @@ create table infra_user (
    Email VARCHAR(30) NOT NULL,
    PRIMARY KEY (id)
 );
+
+INSERT INTO `infracommerce`.`infra_car_shopping` (`id`, `DATA_COMPRA`, `QUANTIDADE`, `product_id`, `TRANSACAO`) VALUES ('01', '2008/01/01', '1', '5', '10');
+
+INSERT INTO `infracommerce`.`infra_car_shopping` (`id`, `DATA_COMPRA`, `QUANTIDADE`, `product_id`, `TRANSACAO`) VALUES ('02', '2008/01/01', '1', '5', '10');
+

@@ -7,7 +7,9 @@
         <link href="css/app.css" rel="stylesheet"/>
     </head>
     <body>
-    	<div class="custom-width-logo"><img src="images/logo_infracommerce.png" /></div>
+    	<div class="custom-width-logo">
+    		<img src="images/logo_infracommerce.png" />
+    	</div>
     	<div style="padding-left: 24px;">
     		<span class="lead"><a href="http://localhost:8080/infracommerce">Usuários</a></span>
     		<span class="lead"><a href="http://localhost:8080/infracommerce/product">Produtos</a></span>

@@ -46,8 +46,8 @@ angular.module('productApp').controller('ProductController',
                         $scope.myForm.$setPristine();
                     },
                     function (errResponse) {
-                        console.error('Erro na criação do usuário');
-                        self.errorMessage = 'Erro na criação do usuário: ' + errResponse.data.errorMessage;
+                        console.error('Erro na criação do produto');
+                        self.errorMessage = 'Erro na criação do produto: ' + errResponse.data.errorMessage;
                         self.successMessage='';
                     }
                 );
@@ -60,10 +60,11 @@ angular.module('productApp').controller('ProductController',
                 .then(
                     function (response){
                         console.log('Produto atualizado com sucesso');
-                        self.successMessage='Produtoatualizado com sucesso';
+                        self.successMessage='Produto atualizado com sucesso';
                         self.errorMessage='';
                         self.done = true;
                         $scope.myForm.$setPristine();
+                        reset();
                     },
                     function(errResponse){
                         console.error('Erro na atualização do Produto');
@@ -75,14 +76,15 @@ angular.module('productApp').controller('ProductController',
 
 
         function removeProduct(id){
-            console.log('Removendo usuário id: '+id);
+            console.log('Removendo produto id: '+id);
             ProductService.removeProduct(id)
                 .then(
                     function(){
                         console.log('Produto '+id + ' removido com sucesso');
                     },
                     function(errResponse){
-                        console.error('Erro de exclusão do Produto '+id +', Erro :'+errResponse.data);
+                        console.error('Erro de exclusão do Produto '+ id +', Erro :'+errResponse.data);
+                        self.errorMessage='Erro na exclusão desse item, ele está vinculado com uma compra';
                     }
                 );
         }

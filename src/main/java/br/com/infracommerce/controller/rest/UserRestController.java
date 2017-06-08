@@ -26,22 +26,17 @@ public class UserRestController {
 	public static final Logger logger = LoggerFactory.getLogger(UserRestController.class);
 
 	@Autowired
-	UserService userService; // Service which will do all data
-								// retrieval/manipulation work
+	UserService userService; 
 
-	// -------------------Retrieve All Users---------------------------------------------
 
 	@RequestMapping(value = "/user/", method = RequestMethod.GET)
 	public ResponseEntity<List<User>> listAllUsers() {
 		List<User> users = userService.findAllUsers();
 		if (users.isEmpty()) {
 			return new ResponseEntity(HttpStatus.NO_CONTENT);
-			// You many decide to return HttpStatus.NOT_FOUND
 		}
 		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
 	}
-
-	// -------------------Retrieve Single User------------------------------------------
 
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> getUser(@PathVariable("id") long id) {
@@ -53,9 +48,6 @@ public class UserRestController {
 		}
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
-
-	// -------------------Create a
-	// User-------------------------------------------
 
 	@RequestMapping(value = "/user/", method = RequestMethod.POST)
 	public ResponseEntity<?> createUser(@RequestBody User user, UriComponentsBuilder ucBuilder) {
@@ -73,9 +65,6 @@ public class UserRestController {
 		headers.setLocation(ucBuilder.path("/api/user/{id}").buildAndExpand(user.getId()).toUri());
 		return new ResponseEntity<String>(headers, HttpStatus.CREATED);
 	}
-
-	// ------------------- Update a User
-	// ------------------------------------------------
 
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<?> updateUser(@PathVariable("id") long id, @RequestBody User user) {
@@ -95,9 +84,6 @@ public class UserRestController {
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 
-	// ------------------- Delete a
-	// User-----------------------------------------
-
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<?> deleteUser(@PathVariable("id") long id) {
 		logger.info("Fetching & Deleting User with id {}", id);
@@ -111,8 +97,6 @@ public class UserRestController {
 		userService.deleteUserById(id);
 		return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
 	}
-
-	// ------------------- Delete All Users-----------------------------
 
 	@RequestMapping(value = "/user/", method = RequestMethod.DELETE)
 	public ResponseEntity<User> deleteAllUsers() {
