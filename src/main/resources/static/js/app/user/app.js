@@ -1,8 +1,8 @@
 var app = angular.module('crudApp',['ui.router','ngStorage']);
 
 app.constant('urls', {
-    BASE: 'http://localhost:8080/infracommerce',
-    USER_SERVICE_API : 'http://localhost:8080/infracommerce/api/user/'
+    BASE: 'http://infracommerce.herokuapp.com/infracommerce',
+    USER_SERVICE_API : 'http://infracommerce.herokuapp.com/infracommerce/api/user/'
 });
 
 app.config(['$stateProvider', '$urlRouterProvider',

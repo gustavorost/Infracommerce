@@ -1,8 +1,8 @@
 var app = angular.module('carShoppingApp',['ui.router','ngStorage']);
 
 app.constant('urls', {
-    BASE: 'http://localhost:8080/infracommerce',
-    USER_SERVICE_API : 'http://localhost:8080/infracommerce/api/shopping/'
+    BASE: 'http://infracommerce.herokuapp.com/infracommerce',
+    USER_SERVICE_API : 'http://infracommerce.herokuapp.com/infracommerce/api/shopping/'
 });
 
 app.config(['$stateProvider', '$urlRouterProvider',

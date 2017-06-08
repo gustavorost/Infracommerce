@@ -11,9 +11,9 @@
   			<img src="images/logo_infracommerce.png" />  		
     	</div>
     	<div style="padding-left: 24px;">
-    		<span class="lead"><a href="http://localhost:8080/infracommerce">Usuários</a></span>
-    		<span class="lead"><a href="http://localhost:8080/infracommerce/product">Produtos</a></span>
-    		<span class="lead"><a href="http://localhost:8080/infracommerce/shopping">Shopping</a></span>
+    		<span class="lead"><a href="http://infracommerce.herokuapp.com/infracommerce">Usuários</a></span>
+    		<span class="lead"><a href="http://infracommerce.herokuapp.com/infracommerce/product">Produtos</a></span>
+    		<span class="lead"><a href="http://http://infracommerce.herokuapp.com/infracommerce/shopping">Shopping</a></span>
     	</div>
         <div ui-view></div>
         <script src="js/lib/angular.min.js" ></script>
