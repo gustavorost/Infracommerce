@@ -6,9 +6,9 @@ spring:
   profiles: local,default
 datasource:
   infracommerce:
-    url: ${JDBC_DATABASE_URL}
-    username: ${JDBC_DATABASE_USERNAME}
-    password: ${JDBC_DATABASE_PASSWORD}
+    url: us-cdbr-iron-east-03.cleardb.net/heroku_3a474168aa0c33f
+    username: b440be76b59cc8
+    password: 8b8e1d71
     driverClassName: com.mysql.jdbc.Driver
     defaultSchema:
     maxPoolSize: 10
