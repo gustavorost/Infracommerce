@@ -6,7 +6,7 @@ spring:
   profiles: local,default
 datasource:
   infracommerce:
-    url: us-cdbr-iron-east-03.cleardb.net/heroku_3a474168aa0c33f
+    url: jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/heroku_3a474168aa0c33f
     username: b440be76b59cc8
     password: 8b8e1d71
     driverClassName: com.mysql.jdbc.Driver
