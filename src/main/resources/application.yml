@@ -6,14 +6,14 @@ spring:
   profiles: local,default
 datasource:
   infracommerce:
-    url: jdbc:mysql://localhost:3306/infracommerce
-    username: root
-    password: root
+    url: us-cdbr-iron-east-03.cleardb.net
+    username: b440be76b59cc8
+    password: 8b8e1d71
     driverClassName: com.mysql.jdbc.Driver
     defaultSchema:
     maxPoolSize: 10
     hibernate:
-      hbm2ddl.method: update
+      hbm2ddl.method: create-drop-update
       show_sql: true
       format_sql: true
       dialect: org.hibernate.dialect.MySQLDialect

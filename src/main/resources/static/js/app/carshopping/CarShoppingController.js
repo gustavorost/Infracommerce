@@ -91,19 +91,6 @@ angular.module('carShoppingApp').controller('CarShoppingController',
     		self.addToCarTemp.push(carShopping);
     		self.errorMessageCart='';
         	
-        	//Obtem indice do item na lista para usar no if
-//        	var index 		= self.addToCarTemp.indexOf(carShopping);
-//        	if(index == -1){
-//        		console.log("Inserindo produto: " + carShopping.productName);
-//        		self.arrayCar.push(carShopping);
-//        		self.addToCarTemp.push(carShopping);
-//        	}
-//        	else{
-//        		console.log("Atualizando produto: " + carShopping.productName);
-//        		self.arrayCar = {arrayTemp};
-//        		self.addToCarTemp[index] = carShopping;
-//        	}
-        	
         }
         
         function removeToCar(carShopping){
